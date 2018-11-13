@@ -3,6 +3,8 @@
 jupyter nbconvert --to python carPrices_autotie.ipynb
 jupyter nbconvert --to python carPrices_nettiauto.ipynb
 jupyter nbconvert --to python carPrices_autotalli.ipynb
+jupyter nbconvert --to python carPrices_insert.ipynb
+jupyter nbconvert --to python carPrices_analysis.ipynb
 
 #run with python3
 # python3 carPrices_autotie.py
