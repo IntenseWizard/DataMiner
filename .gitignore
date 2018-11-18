@@ -1,0 +1,13 @@
+.ipynb_checkpoints/
+carPrices_analysis.py
+carPrices_autotalli.py
+carPrices_autotie.py
+carPrices_insert.py
+carPrices_nettiauto.py
+getAutotalliImages.ipynb
+getAutotieImages.ipynb
+getNettiautoImages.ipynb
+images/
+myown.db
+time.py
+
