@@ -5,6 +5,7 @@ jupyter nbconvert --to python carPrices_nettiauto.ipynb
 jupyter nbconvert --to python carPrices_autotalli.ipynb
 jupyter nbconvert --to python carPrices_insert.ipynb
 jupyter nbconvert --to python carPrices_analysis.ipynb
+jupyter nbconvert --to python getAllImages.ipynb
 
 #run with python3
 # python3 carPrices_autotie.py
