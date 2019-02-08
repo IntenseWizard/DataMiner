@@ -80,18 +80,28 @@ html_file_path='/var/www/html/images.html'
 html=""
 #Do the magic
 konjunktiot=['ei','nyt','oli','jo','se','ovat','on','ja','mutta','ole','se','vain', 'joka','sen','myös','ettei','sanoo','näyttää','vuosi','vuonna','vuotias','viime','puoli','eivät','sitten','aikaan','niin','saa','sai','saatu','jälkeen']
+every_days_text=[]
 for day,name in zip(all_text,names):
     pure_text=day
     print(name)
     for k in konjunktiot:
         #pure_text= [a.replace(k,"") for a in pure_text]
         pure_text= [re.sub(r"\b%s\b" % k, "", a) for a in pure_text]
+        
+    every_days_text=every_days_text+pure_text
     #makeWordmap(str(pure_text))
     n=name.replace("csv","jpg")
     makeWordmapImg(str(pure_text), os.path.join(writePath,n))
     #Generate HTML
     html_filepath=html_img_path+n
-    html=html+'<div class="column"><img src="'+html_filepath+'" alt="'+name+'"></div>'
+    html=html+'<figure><img src="'+html_filepath+'" alt="'+name+'"hspace="10" vspace="10" align="middle"><figcaption>'+name+'</figcaption></figure>'
+
+#Make from all words
+name = "hs_combined.jpg"
+makeWordmapImg(str(every_days_text), os.path.join(writePath,name))
+#Generate HTML
+html_filepath=html_img_path+name
+html='<figure><img src="'+html_filepath+'" alt="'+name+'"hspace="10" vspace="10" align="middle"><figcaption>'+name+'</figcaption></figure>'+html
     
 #write html to path
 print("HTML Code is")
