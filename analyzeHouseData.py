@@ -276,6 +276,23 @@ finalDf = pd.concat([principalDf], axis = 1)
 # ax.grid()
 # xmin, xmax, ymin, ymax = ax()
 
+import math
+
+def makeDirections(x,y):
+    directions=[[100,0,0,0,0],[0,100,0,0,0],[0,0,100,0,0],[0,0,0,100,0],[0,0,0,0,100]]
+    directionsPca=pca.fit_transform(directions)
+    print(directionsPca)
+
+    for direction in directionsPca:
+        x0=direction[0]
+        y0=direction[1]
+        
+        vec_len = math.sqrt((x0)*(x0)+(y0)*(y0))
+        x1=x0/vec_len
+        y1=y0/vec_len
+        
+        plt.arrow(x,y,x1,y1,linewidth=3,head_width=0.3)
+
 # In[64]:
 
 
@@ -308,6 +325,7 @@ for target, color, v in zip(targets,colors,val):
 ax.legend(targets,loc=1)
 ax.grid()
 xmin, xmax, ymin, ymax = plt.axis()
+makeDirections(1,1)
 saveFig("/var/www/html/pca/images/location.png", fig)
 
 # In[64]:
@@ -341,6 +359,7 @@ for target, color, v in zip(targets,colors,val):
 ax.legend(targets,loc=1)
 ax.grid()
 plt.axis([xmin, xmax, ymin, ymax])
+makeDirections(1,1)
 saveFig("/var/www/html/pca/images/type.png", fig)
 
 
@@ -373,6 +392,7 @@ for target, color, v in zip(targets,colors,val):
 ax.legend(targets,loc=1)
 ax.grid()
 plt.axis([xmin, xmax, ymin, ymax])
+makeDirections(1,1)
 saveFig("/var/www/html/pca/images/size.png", fig)
 
 #Get where price is optimal
@@ -403,6 +423,7 @@ for target, color, v in zip(targets,colors,val):
 ax.legend(targets,loc=1)
 ax.grid()
 plt.axis([xmin, xmax, ymin, ymax])
+makeDirections(1,1)
 saveFig("/var/www/html/pca/images/price.png", fig)
 
 
@@ -435,6 +456,7 @@ for target, color, v in zip(targets,colors,val):
 ax.legend(targets,loc=1)
 ax.grid()
 plt.axis([xmin, xmax, ymin, ymax])
+makeDirections(1,1)
 saveFig("/var/www/html/pca/images/year.png", fig)
 
 
