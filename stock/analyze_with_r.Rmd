@@ -1,0 +1,8 @@
+```{python}
+
+```
+Now we will run script
+```{r}
+setwd('/home/m/dataminer/stock')
+```
+
