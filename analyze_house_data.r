@@ -15,7 +15,7 @@ counter=1
 
 result = tryCatch({
   for (file in files){
-    print("Reading file")
+    print(paste("Reading file",file,sep=" "))
     data=read.csv(file,header=FALSE, sep=",")
     # for (i in c(1:length(df))) {
     #   if (i==1){n=df[[1]]}
