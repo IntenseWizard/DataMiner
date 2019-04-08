@@ -13,6 +13,7 @@ print(files)
 #df = lapply(files,read.csv,header=FALSE, sep=",")
 counter=1
 for (file in files){
+  print("Reading file")
 n=read.csv(file,header=FALSE, sep=",")
 # for (i in c(1:length(df))) {
 #   if (i==1){n=df[[1]]}
@@ -24,13 +25,12 @@ n=read.csv(file,header=FALSE, sep=",")
 labels=c("Link","Location", "Address", "Type", "Rooms", "Size", "Price", "Year")
 colnames(n)=labels
 
-price=na.omit(data$Price)
-
 data=n
 
 #data=raw_data[duplicated(raw_data["Date"])==FALSE,]
 #data=data[is.null(data["Close"])==0,]
 #data=data[order(data["Date"]),]
+print("Formatting Size, Price and Year")
 
 data$Size=gsub("m²", "", data$Size) 
 data$Size=gsub(",", ".", data$Size) 
@@ -63,6 +63,7 @@ hist(d$Size)
 hist(d$Price, main = mean_price)
 dev.off()
 counter=counter+1
+print(paste("Image saved at",png_name, sep=""))
 }
 
 rcon<-file(paste(target_dir,"testR2.html",sep=""),"w")
