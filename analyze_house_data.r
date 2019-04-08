@@ -16,7 +16,7 @@ counter=1
 result = tryCatch({
   for (file in files){
     print("Reading file")
-    n=read.csv(file,header=FALSE, sep=",")
+    data=read.csv(file,header=FALSE, sep=",")
     # for (i in c(1:length(df))) {
     #   if (i==1){n=df[[1]]}
     #   else{
@@ -25,9 +25,8 @@ result = tryCatch({
     # }
     #rm(df)
     labels=c("Link","Location", "Address", "Type", "Rooms", "Size", "Price", "Year")
-    colnames(n)=labels
+    colnames(data)=labels
     
-    data=n
     
     #data=raw_data[duplicated(raw_data["Date"])==FALSE,]
     #data=data[is.null(data["Close"])==0,]
