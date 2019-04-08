@@ -65,7 +65,7 @@ result = tryCatch({
     hist(d$Price, main = mean_price)
     dev.off()
     counter=counter+1
-    print(paste("Image saved at",png_name, sep=""))
+    print(paste("Image saved at ",png_name, sep=""))
   }
 #}, warning = function(w) {
   #warning-handler-code
