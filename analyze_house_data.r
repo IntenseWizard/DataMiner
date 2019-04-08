@@ -73,6 +73,7 @@ result = tryCatch({
   #error-handler-code
 }, finally = {
   #cleanup-code
+  warnings()
 })
 
 
